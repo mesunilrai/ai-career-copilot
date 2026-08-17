@@ -1,7 +1,7 @@
 # Business Requirements Document (BRD)
 ## AI Career Copilot
 
-**Version:** 1.0  
+**Version:** 1.1  
 **Status:** MVP Definition
 
 ## 1. Business Problem
@@ -22,6 +22,7 @@ Create an AI-assisted career decision-support tool that turns an unstructured jo
 - Identify genuine capability gaps without fabricating qualifications.
 - Improve interview preparation based on the target role.
 - Provide a practical platform for demonstrating responsible AI product delivery.
+- Maintain a self-sufficient knowledge base documenting the product, implementation decisions, AI concepts, experiments, failures, and lessons learned.
 
 ## 4. Target Users
 
@@ -44,6 +45,8 @@ The public project will use generic/synthetic candidate data. Personal candidate
 - Application recommendations.
 - Interview preparation areas.
 - Structured AI output.
+- Documentation of AI/TPM concepts learned during implementation.
+- Documentation of implementation decisions, experiments, failures, fixes, and key lessons.
 
 ### Out of Scope
 
@@ -68,6 +71,9 @@ The public project will use generic/synthetic candidate data. Personal candidate
 | BR-06 | The system shall provide actionable application recommendations. |
 | BR-07 | The system shall identify interview preparation areas relevant to the role. |
 | BR-08 | AI results shall be returned in a consistent structured format. |
+| BR-09 | The repository shall contain sufficient product and technical documentation for another person to understand and reproduce the MVP. |
+| BR-10 | Major AI concepts used or learned shall be documented with definitions, practical examples, implementation notes, limitations, and AI TPM takeaways. |
+| BR-11 | Important implementation decisions and production lessons shall be recorded so the repository remains useful without access to the original development conversation. |
 
 ## 7. Success Measures
 
@@ -79,6 +85,7 @@ Initial MVP success will be measured by:
 - The system avoids unsupported claims.
 - Test cases produce consistent structured output.
 - The application demonstrates a clear AI product workflow suitable for portfolio and AI TPM learning.
+- A new reader can understand the product, architecture, setup, key AI concepts, and major lessons using the repository documentation alone.
 
 ## 8. Constraints & Assumptions
 
@@ -87,6 +94,7 @@ Initial MVP success will be measured by:
 - Synthetic/public test data will be used for demonstrations.
 - The initial version should remain simple enough to understand and modify while learning AI concepts.
 - The human user remains the final decision maker.
+- Documentation should be practical and concise enough to remain maintainable.
 
 ## 9. Risks
 
@@ -95,6 +103,7 @@ Initial MVP success will be measured by:
 - Candidate profiles may contain insufficient evidence.
 - Fit scores may create false precision if presented without explanation.
 - LLM cost and latency may increase as workflows become more complex.
+- Documentation may become outdated if implementation changes are not recorded.
 
 ## 10. Future Direction
 
