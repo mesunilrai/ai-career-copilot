@@ -1,12 +1,14 @@
 # Product Requirements Document (PRD)
 ## AI Career Copilot — MVP
 
-**Version:** 1.0  
+**Version:** 1.1  
 **Status:** MVP Definition
 
 ## 1. Product Goal
 
 Provide a simple AI-assisted workflow that analyzes a job description against a candidate profile and produces an explainable fit assessment, application recommendations, and interview preparation areas.
+
+The repository itself must also function as a self-sufficient learning and product reference for the AI TPM concepts demonstrated by the project.
 
 ## 2. User Journey
 
@@ -95,6 +97,27 @@ The system identifies likely interview focus areas based on the role and profile
 - Preparation areas should prioritize meaningful requirements and identified gaps.
 - Questions should not assume experience that is absent from the profile.
 
+### F7 — Learning & Knowledge Documentation
+
+The project shall document the concepts learned while implementing the product.
+
+Each major concept should, where applicable, cover:
+- Plain-language definition.
+- Why the concept matters.
+- Where it appears in this project.
+- Practical implementation example.
+- Limitations/trade-offs.
+- Failure or debugging experience.
+- AI TPM takeaway/interview relevance.
+
+Examples include LLMs, prompting, structured outputs, schema validation, hallucination, evaluation, embeddings, RAG, tool calling, agents, guardrails, security, cost, latency, and observability.
+
+### F8 — Decision & Experiment Documentation
+
+Important architecture decisions, implementation experiments, failures, fixes, and lessons learned shall be documented in the repository.
+
+The documentation must allow a reader to understand the project without access to the original development conversation.
+
 ## 4. AI Output Contract
 
 The backend should request and validate a structured response containing:
@@ -140,6 +163,7 @@ The exact schema may evolve during implementation.
 - Separate UI, API, AI orchestration, schemas, and configuration.
 - Keep prompts version-controlled and reviewable.
 - Use typed/validated structured outputs where practical.
+- Keep documentation aligned with implementation changes.
 
 ### Cost
 - Minimize unnecessary model calls.
@@ -206,5 +230,6 @@ The MVP is complete when a user can:
 5. Understand why the candidate matches or does not match.
 6. Receive evidence-based application recommendations.
 7. Receive targeted interview preparation areas.
+8. Follow the repository documentation to understand the product, implementation, key AI concepts, and major lessons learned.
 
 No automatic application submission is part of MVP.
