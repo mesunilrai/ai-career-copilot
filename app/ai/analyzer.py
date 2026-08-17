@@ -6,6 +6,7 @@ from groq import Groq
 
 
 PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "job_analysis.txt"
+DEFAULT_MODEL = "openai/gpt-oss-120b"
 
 
 def analyze_job(job_description: str, candidate_profile: str) -> dict:
@@ -21,7 +22,7 @@ def analyze_job(job_description: str, candidate_profile: str) -> dict:
 
     client = Groq(api_key=api_key)
     response = client.chat.completions.create(
-        model=os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"),
+        model=os.getenv("GROQ_MODEL", DEFAULT_MODEL),
         messages=[{"role": "user", "content": prompt}],
         temperature=0,
         response_format={"type": "json_object"},
