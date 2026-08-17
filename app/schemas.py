@@ -1,12 +1,16 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class AnalyzeRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     job_description: str = Field(min_length=20)
     candidate_profile: str = Field(min_length=20)
 
 
 class AnalyzeResponse(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     overall_fit_score: int = Field(ge=0, le=100)
     fit_summary: str
     strong_matches: list[str]
