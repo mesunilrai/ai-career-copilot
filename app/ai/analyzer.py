@@ -4,6 +4,8 @@ from pathlib import Path
 
 from groq import Groq
 
+from app.schemas import AnalyzeResponse
+
 
 PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "job_analysis.txt"
 DEFAULT_MODEL = "openai/gpt-oss-120b"
@@ -25,7 +27,14 @@ def analyze_job(job_description: str, candidate_profile: str) -> dict:
         model=os.getenv("GROQ_MODEL", DEFAULT_MODEL),
         messages=[{"role": "user", "content": prompt}],
         temperature=0,
-        response_format={"type": "json_object"},
+        response_format={
+            "type": "json_schema",
+            "json_schema": {
+                "name": "career_analysis",
+                "strict": True,
+                "schema": AnalyzeResponse.model_json_schema(),
+            },
+        },
     )
 
     content = response.choices[0].message.content
